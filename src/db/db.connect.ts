@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import config from 'config';
+import logger from '../utils/logger';
 
 // open the MongoDB connection
 const connectDB = async () => {
@@ -7,10 +8,9 @@ const connectDB = async () => {
   try {
     await mongoose.connect(dbUrl || 'mongodb://127.0.0.1:27017/newAuthDB');
 
-    console.log('Successfully connected to the MongoDB database.');
+    logger.info('Successfully connected to the MongoDB database.');
   } catch (error) {
-    console.log(error);
-    console.error('MongoDB connection FAIL');
+    logger.error('MongoDB connection FAIL');
     process.exit(1);
   }
 };
