@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "CommonJS",
-    "rootDir": "./src",
+    "rootDirs": ["./src", "config"],
     "sourceMap": true,
     "outDir": "./dist",
     "removeComments": false,
@@ -19,5 +19,5 @@
     "noImplicitAny": true
   },
   "exclude": ["node_modules", "dist", "__tests__", "coverage"],
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "config"]
 }

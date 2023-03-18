@@ -1,7 +1,11 @@
 import express, { Express } from 'express';
+import config from 'config';
+import connectDB from './db/db.connect';
 
+const port = config.get<number>('port');
 const app: Express = express();
 
-app.listen(4000, () => {
-  console.log('TS: server is running on port 🚀 4000.');
+app.listen(port, async () => {
+  console.log(`TS: server is running on port 🚀 ${port}`);
+  await connectDB();
 });
